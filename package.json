@@ -1,0 +1,95 @@
+{
+  "name": "mynewcli",
+  "description": "A new CLI generated with oclif",
+  "version": "0.0.0",
+  "author": "nahoon kang",
+  "bin": {
+    "mynewcli": "./bin/run.js"
+  },
+  "dependencies": {
+    "@oclif/core": "^4",
+    "@oclif/plugin-help": "^6",
+    "@oclif/plugin-plugins": "^5",
+    "axios": "^1.7.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-basic-auth": "^1.2.1",
+    "express-rate-limit": "^7.3.1",
+    "http-errors": "^2.0.0",
+    "http-status-codes": "^2.3.0",
+    "lodash": "^4.17.21",
+    "reflect-metadata": "^0.2.2",
+    "sanitize-html": "^2.13.0",
+    "sqlite3": "^5.1.7",
+    "typeorm": "^0.3.20",
+    "winston": "^3.13.0"
+  },
+  "devDependencies": {
+    "@oclif/prettier-config": "^0.2.1",
+    "@oclif/test": "^4",
+    "@types/chai": "^4",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/express-serve-static-core": "^4.19.5",
+    "@types/mocha": "^10",
+    "@types/node": "^18",
+    "@types/sanitize-html": "^2.11.0",
+    "chai": "^4",
+    "eslint": "^8",
+    "eslint-config-oclif": "^5",
+    "eslint-config-oclif-typescript": "^3",
+    "eslint-config-prettier": "^9",
+    "mocha": "^10",
+    "oclif": "^4",
+    "shx": "^0.3.3",
+    "ts-node": "^10",
+    "tsc-watch": "^6.2.0",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "/bin",
+    "/dist",
+    "/oclif.manifest.json"
+  ],
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "dist/index.js",
+  "type": "module",
+  "oclif": {
+    "bin": "mynewcli",
+    "dirname": "mynewcli",
+    "commands": "./dist/commands",
+    "plugins": [
+      "@oclif/plugin-help",
+      "@oclif/plugin-plugins"
+    ],
+    "topicSeparator": " ",
+    "topics": {
+      "hello": {
+        "description": "Say hello to the world and others"
+      }
+    }
+  },
+  "repository": "ejrtks1020/mynewcli",
+  "scripts": {
+    "build": "shx rm -rf dist && tsc -b",
+    "start": "./bin/run.js start",
+    "watch": "tsc --watch",
+    "dev": "tsc-watch --noClear -p ./tsconfig.json --onSuccess \"pnpm start\"",
+    "typeorm": "typeorm-ts-node-esm",
+    "typeorm:migration-create": "pnpm typeorm migration:create",
+    "lint": "eslint . --ext .ts",
+    "postpack": "shx rm -f oclif.manifest.json",
+    "posttest": "pnpm run lint",
+    "prepack": "oclif manifest && oclif readme",
+    "test": "mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif readme && git add README.md"
+  },
+  "types": "dist/index.d.ts"
+}

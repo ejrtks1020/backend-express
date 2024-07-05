@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    // 데코레이터 처리
+    "experimentalDecorators": true /* Enable experimental support for TC39 stage 2 draft decorators. */,
+    "emitDecoratorMetadata": true /* Emit design-type metadata for decorated declarations in source files. */,    
+    "strictPropertyInitialization": false, // 속성값 필수 초기화 비활성화
+    "skipLibCheck": true /* Skip type checking all .d.ts files. 타입 정의 파일 검사 무시 */,
+    "declaration": true,
+    "module": "Node16",
+    "outDir": "dist",
+    "rootDir": "src",
+    "strict": true, // false로 하면 데코레이터 오류 해결가능?
+    "target": "es2022",
+    "moduleResolution": "node16"
+  },
+  "include": ["./src/**/*"],
+  "ts-node": {
+    "esm": true
+  }
+}
